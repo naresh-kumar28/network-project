@@ -1,1 +1,0 @@
-# Initializer for income app

@@ -1,1 +1,0 @@
-# Initializer for withdrawals app
