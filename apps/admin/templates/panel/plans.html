@@ -1,0 +1,102 @@
+{% extends "panel/layout/base.html" %}
+{% load static %}
+
+{% block title %}Plans{% endblock %}
+
+{% block content %}
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <div>
+        <h1 class="text-2xl font-bold text-slate-800">Membership & Investment Plans</h1>
+        <p class="text-xs font-medium text-slate-500 mt-0.5">Manage network entry packages, binary capping & direct commissions</p>
+    </div>
+    <button class="bg-[#6D4AFF] hover:bg-purple-700 text-white text-xs font-semibold px-4 py-2.5 rounded-xl shadow-md flex items-center space-x-2 transition">
+        <i data-lucide="plus" class="w-4 h-4"></i>
+        <span>Create New Plan</span>
+    </button>
+</div>
+
+<!-- Grid of Plans -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- Plan A -->
+    <div class="bg-white rounded-2xl border border-slate-100 p-6 shadow-xs relative overflow-hidden">
+        <div class="absolute top-0 right-0 bg-[#6D4AFF] text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">Popular</div>
+        <h3 class="text-lg font-bold text-slate-800">Plan A (Starter)</h3>
+        <p class="text-xs text-slate-500 mt-1">Basic MLM Entry Package</p>
+        <div class="my-4">
+            <span class="text-3xl font-extrabold text-[#6D4AFF]">₹ 3,000</span>
+            <span class="text-xs text-slate-400">/ one-time</span>
+        </div>
+        <ul class="space-y-2.5 text-xs text-slate-600 border-t border-slate-100 pt-4">
+            <li class="flex items-center space-x-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i>
+                <span>Direct Referral Income: <strong>₹ 300</strong></span>
+            </li>
+            <li class="flex items-center space-x-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i>
+                <span>Binary Pair Capping: <strong>10 Pairs / day</strong></span>
+            </li>
+            <li class="flex items-center space-x-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i>
+                <span>Active Members: <strong>7,245</strong></span>
+            </li>
+        </ul>
+        <div class="mt-6 flex items-center space-x-2">
+            <button class="w-full bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold py-2.5 rounded-xl transition">Edit Plan</button>
+        </div>
+    </div>
+
+    <!-- Plan B -->
+    <div class="bg-white rounded-2xl border border-slate-100 p-6 shadow-xs relative overflow-hidden">
+        <h3 class="text-lg font-bold text-slate-800">Plan B (Pro)</h3>
+        <p class="text-xs text-slate-500 mt-1">Advanced Business Package</p>
+        <div class="my-4">
+            <span class="text-3xl font-extrabold text-emerald-600">₹ 2,800</span>
+            <span class="text-xs text-slate-400">/ one-time</span>
+        </div>
+        <ul class="space-y-2.5 text-xs text-slate-600 border-t border-slate-100 pt-4">
+            <li class="flex items-center space-x-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i>
+                <span>Direct Referral Income: <strong>₹ 250</strong></span>
+            </li>
+            <li class="flex items-center space-x-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i>
+                <span>Binary Pair Capping: <strong>8 Pairs / day</strong></span>
+            </li>
+            <li class="flex items-center space-x-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i>
+                <span>Active Members: <strong>5,213</strong></span>
+            </li>
+        </ul>
+        <div class="mt-6 flex items-center space-x-2">
+            <button class="w-full bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold py-2.5 rounded-xl transition">Edit Plan</button>
+        </div>
+    </div>
+
+    <!-- Plan C -->
+    <div class="bg-white rounded-2xl border border-slate-100 p-6 shadow-xs relative overflow-hidden">
+        <h3 class="text-lg font-bold text-slate-800">Plan C (VIP)</h3>
+        <p class="text-xs text-slate-500 mt-1">Maximum Commission Tier</p>
+        <div class="my-4">
+            <span class="text-3xl font-extrabold text-amber-500">₹ 5,000</span>
+            <span class="text-xs text-slate-400">/ one-time</span>
+        </div>
+        <ul class="space-y-2.5 text-xs text-slate-600 border-t border-slate-100 pt-4">
+            <li class="flex items-center space-x-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i>
+                <span>Direct Referral Income: <strong>₹ 600</strong></span>
+            </li>
+            <li class="flex items-center space-x-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i>
+                <span>Binary Pair Capping: <strong>20 Pairs / day</strong></span>
+            </li>
+            <li class="flex items-center space-x-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i>
+                <span>Active Members: <strong>1,450</strong></span>
+            </li>
+        </ul>
+        <div class="mt-6 flex items-center space-x-2">
+            <button class="w-full bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold py-2.5 rounded-xl transition">Edit Plan</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

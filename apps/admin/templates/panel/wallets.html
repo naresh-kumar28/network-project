@@ -1,0 +1,31 @@
+{% extends "panel/layout/base.html" %}
+{% load static %}
+
+{% block title %}Wallets{% endblock %}
+
+{% block content %}
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <div>
+        <h1 class="text-2xl font-bold text-slate-800">System Wallets Overview</h1>
+        <p class="text-xs font-medium text-slate-500 mt-0.5">Manage main wallet, E-wallet, and income payout balances</p>
+    </div>
+</div>
+
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+    <div class="bg-gradient-to-tr from-purple-700 to-[#6D4AFF] p-6 rounded-2xl text-white shadow-lg">
+        <span class="text-xs font-bold uppercase tracking-wider text-purple-200">Main Company Wallet</span>
+        <h2 class="text-3xl font-extrabold mt-2">₹ 24,75,600</h2>
+        <p class="text-xs text-purple-200 mt-4">Total Reserved Balance across all accounts</p>
+    </div>
+    <div class="bg-gradient-to-tr from-slate-900 to-slate-800 p-6 rounded-2xl text-white shadow-lg">
+        <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Total User E-Wallets</span>
+        <h2 class="text-3xl font-extrabold mt-2">₹ 14,20,000</h2>
+        <p class="text-xs text-slate-400 mt-4">Pre-funded balances for EPIN purchase</p>
+    </div>
+    <div class="bg-gradient-to-tr from-emerald-700 to-emerald-500 p-6 rounded-2xl text-white shadow-lg">
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-100">Total Payable Income</span>
+        <h2 class="text-3xl font-extrabold mt-2">₹ 10,55,600</h2>
+        <p class="text-xs text-emerald-100 mt-4">Available for withdrawal requests</p>
+    </div>
+</div>
+{% endblock %}

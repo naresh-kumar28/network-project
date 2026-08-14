@@ -1,0 +1,40 @@
+{% extends "panel/layout/base.html" %}
+{% load static %}
+
+{% block title %}Transactions{% endblock %}
+
+{% block content %}
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <div>
+        <h1 class="text-2xl font-bold text-slate-800">System Transactions Log</h1>
+        <p class="text-xs font-medium text-slate-500 mt-0.5">Audit log of all credits, debits, EPIN purchases & payouts</p>
+    </div>
+</div>
+
+<div class="bg-white rounded-2xl border border-slate-100 shadow-xs overflow-hidden">
+    <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+            <thead>
+                <tr class="bg-slate-50 text-[11px] font-bold text-slate-600 uppercase border-b border-slate-100">
+                    <th class="py-3 px-4">Txn ID</th>
+                    <th class="py-3 px-4">Member</th>
+                    <th class="py-3 px-4">Type</th>
+                    <th class="py-3 px-4">Amount</th>
+                    <th class="py-3 px-4">Description</th>
+                    <th class="py-3 px-4">Date</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 text-xs text-slate-700">
+                <tr>
+                    <td class="py-3 px-4 font-mono font-bold text-slate-800">TXN98721</td>
+                    <td class="py-3 px-4">Rahul Kumar (M12458)</td>
+                    <td class="py-3 px-4"><span class="px-2.5 py-0.5 bg-emerald-50 text-emerald-600 font-bold text-[10px] rounded-full">Credit</span></td>
+                    <td class="py-3 px-4 font-bold text-emerald-600">+ ₹ 3,000</td>
+                    <td class="py-3 px-4 text-slate-500">Binary Pair Commission Payout</td>
+                    <td class="py-3 px-4 text-slate-400">10 May 2024, 10:30 AM</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

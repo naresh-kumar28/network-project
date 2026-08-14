@@ -1,0 +1,42 @@
+{% extends "panel/layout/base.html" %}
+{% load static %}
+
+{% block title %}Reports{% endblock %}
+
+{% block content %}
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <div>
+        <h1 class="text-2xl font-bold text-slate-800">Analytics & Financial Reports</h1>
+        <p class="text-xs font-medium text-slate-500 mt-0.5">Generate downloadable financial, payout, and growth reports</p>
+    </div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-xs space-y-4">
+        <div class="w-10 h-10 rounded-xl bg-purple-100 text-[#6D4AFF] flex items-center justify-center">
+            <i data-lucide="file-text" class="w-5 h-5"></i>
+        </div>
+        <h3 class="text-sm font-bold text-slate-800">Member Growth Report</h3>
+        <p class="text-xs text-slate-500">Detailed list of registrations, active/inactive counts, and daily join stats.</p>
+        <button class="w-full bg-[#6D4AFF] text-white text-xs font-semibold py-2.5 rounded-xl shadow-xs">Download Report (Excel/CSV)</button>
+    </div>
+
+    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-xs space-y-4">
+        <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center">
+            <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
+        </div>
+        <h3 class="text-sm font-bold text-slate-800">Payout & Commission Report</h3>
+        <p class="text-xs text-slate-500">Summary of binary pair payouts, direct commissions, and admin deductions.</p>
+        <button class="w-full bg-[#6D4AFF] text-white text-xs font-semibold py-2.5 rounded-xl shadow-xs">Download Report (Excel/CSV)</button>
+    </div>
+
+    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-xs space-y-4">
+        <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center">
+            <i data-lucide="ticket" class="w-5 h-5"></i>
+        </div>
+        <h3 class="text-sm font-bold text-slate-800">EPIN Audit Report</h3>
+        <p class="text-xs text-slate-500">Comprehensive usage log of generated EPINs, prefix details, and users.</p>
+        <button class="w-full bg-[#6D4AFF] text-white text-xs font-semibold py-2.5 rounded-xl shadow-xs">Download Report (Excel/CSV)</button>
+    </div>
+</div>
+{% endblock %}
