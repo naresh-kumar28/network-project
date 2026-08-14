@@ -1,0 +1,46 @@
+{% extends "panel/layout/base.html" %}
+{% load static %}
+
+{% block title %}Support Tickets{% endblock %}
+
+{% block content %}
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <div>
+        <h1 class="text-2xl font-bold text-slate-800">Support Tickets Center</h1>
+        <p class="text-xs font-medium text-slate-500 mt-0.5">Manage user helpdesk inquiries & tech support issues</p>
+    </div>
+</div>
+
+<div class="bg-white rounded-2xl border border-slate-100 shadow-xs overflow-hidden">
+    <div class="p-4 border-b border-slate-100 flex items-center justify-between">
+        <h3 class="text-xs font-bold text-slate-800 uppercase tracking-wider">Open Helpdesk Tickets</h3>
+        <span class="text-xs text-purple-600 font-bold">24 Active Tickets</span>
+    </div>
+    <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+            <thead>
+                <tr class="bg-slate-50 text-[11px] font-bold text-slate-600 uppercase border-b border-slate-100">
+                    <th class="py-3 px-4">Ticket ID</th>
+                    <th class="py-3 px-4">Subject</th>
+                    <th class="py-3 px-4">Member</th>
+                    <th class="py-3 px-4">Priority</th>
+                    <th class="py-3 px-4">Status</th>
+                    <th class="py-3 px-4 text-center">Action</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 text-xs text-slate-700">
+                <tr>
+                    <td class="py-3 px-4 font-bold text-slate-800">#TK-8821</td>
+                    <td class="py-3 px-4 font-bold text-slate-800">EPIN Activation delay query</td>
+                    <td class="py-3 px-4">Rohit Bansal (M12453)</td>
+                    <td class="py-3 px-4"><span class="px-2 py-0.5 bg-rose-50 text-rose-600 font-bold text-[10px] rounded-full">High</span></td>
+                    <td class="py-3 px-4"><span class="px-2 py-0.5 bg-amber-50 text-amber-600 font-bold text-[10px] rounded-full">Open</span></td>
+                    <td class="py-3 px-4 text-center">
+                        <button class="bg-[#6D4AFF] text-white text-xs font-bold px-3 py-1 rounded-lg">Reply</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

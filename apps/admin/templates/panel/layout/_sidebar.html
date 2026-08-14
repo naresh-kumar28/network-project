@@ -1,0 +1,126 @@
+{% load static %}
+<aside id="sidebar" class="fixed top-0 left-0 bottom-0 z-40 w-64 bg-[#0D0E15] text-slate-400 flex flex-col transition-transform duration-300 -translate-x-full lg:translate-x-0 border-r border-slate-800/60 shadow-xl">
+    <!-- Brand Header -->
+    <div class="h-16 flex items-center px-6 border-b border-slate-800/80 space-x-3 shrink-0">
+        <!-- Brand Logo Icon -->
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-amber-500 to-yellow-400 flex items-center justify-center shadow-lg shadow-amber-500/20 text-slate-950 font-bold">
+            <i data-lucide="hexagons" class="w-5 h-5 stroke-[2.5]"></i>
+        </div>
+        <div>
+            <h1 class="text-white font-extrabold text-base tracking-wider leading-none">NETWORK PRO</h1>
+            <span class="text-[10px] font-semibold tracking-widest text-slate-400 uppercase">ADMIN PANEL</span>
+        </div>
+    </div>
+
+    <!-- Navigation Menu Links -->
+    <div class="flex-1 overflow-y-auto px-4 py-4 space-y-1.5 sidebar-scroll">
+        <a href="{% url 'admin_dashboard' %}" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 {% if active_page == 'dashboard' %}bg-[#6D4AFF] text-white shadow-lg shadow-purple-600/30{% else %}hover:bg-slate-800/60 hover:text-slate-200{% endif %}">
+            <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+            <span>Dashboard</span>
+        </a>
+
+        <a href="{% url 'admin_members' %}" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 {% if active_page == 'members' %}bg-[#6D4AFF] text-white shadow-lg shadow-purple-600/30{% else %}hover:bg-slate-800/60 hover:text-slate-200{% endif %}">
+            <i data-lucide="users" class="w-4 h-4"></i>
+            <span>Members</span>
+        </a>
+
+        <a href="{% url 'admin_binary_tree' %}" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 {% if active_page == 'binary_tree' %}bg-[#6D4AFF] text-white shadow-lg shadow-purple-600/30{% else %}hover:bg-slate-800/60 hover:text-slate-200{% endif %}">
+            <i data-lucide="git-fork" class="w-4 h-4"></i>
+            <span>Binary Tree</span>
+        </a>
+
+        <a href="{% url 'admin_referral_tree' %}" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 {% if active_page == 'referral_tree' %}bg-[#6D4AFF] text-white shadow-lg shadow-purple-600/30{% else %}hover:bg-slate-800/60 hover:text-slate-200{% endif %}">
+            <i data-lucide="share-2" class="w-4 h-4"></i>
+            <span>Referral Tree</span>
+        </a>
+
+        <a href="{% url 'admin_plans' %}" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 {% if active_page == 'plans' %}bg-[#6D4AFF] text-white shadow-lg shadow-purple-600/30{% else %}hover:bg-slate-800/60 hover:text-slate-200{% endif %}">
+            <i data-lucide="layers" class="w-4 h-4"></i>
+            <span>Plans</span>
+        </a>
+
+        <a href="{% url 'admin_epin' %}" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 {% if active_page == 'epin' %}bg-[#6D4AFF] text-white shadow-lg shadow-purple-600/30{% else %}hover:bg-slate-800/60 hover:text-slate-200{% endif %}">
+            <div class="flex items-center space-x-3">
+                <i data-lucide="ticket" class="w-4 h-4"></i>
+                <span>EPIN Management</span>
+            </div>
+            <span class="bg-[#6D4AFF] text-white text-[11px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider {% if active_page == 'epin' %}bg-white/20 text-white{% endif %}">New</span>
+        </a>
+
+        <a href="{% url 'admin_income' %}" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 {% if active_page == 'income' %}bg-[#6D4AFF] text-white shadow-lg shadow-purple-600/30{% else %}hover:bg-slate-800/60 hover:text-slate-200{% endif %}">
+            <i data-lucide="coins" class="w-4 h-4"></i>
+            <span>Income Management</span>
+        </a>
+
+        <a href="{% url 'admin_wallets' %}" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 {% if active_page == 'wallets' %}bg-[#6D4AFF] text-white shadow-lg shadow-purple-600/30{% else %}hover:bg-slate-800/60 hover:text-slate-200{% endif %}">
+            <i data-lucide="wallet" class="w-4 h-4"></i>
+            <span>Wallets</span>
+        </a>
+
+        <a href="{% url 'admin_withdrawals' %}" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 {% if active_page == 'withdrawals' %}bg-[#6D4AFF] text-white shadow-lg shadow-purple-600/30{% else %}hover:bg-slate-800/60 hover:text-slate-200{% endif %}">
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            <span>Withdrawals</span>
+        </a>
+
+        <a href="{% url 'admin_transactions' %}" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 {% if active_page == 'transactions' %}bg-[#6D4AFF] text-white shadow-lg shadow-purple-600/30{% else %}hover:bg-slate-800/60 hover:text-slate-200{% endif %}">
+            <i data-lucide="arrow-left-right" class="w-4 h-4"></i>
+            <span>Transactions</span>
+        </a>
+
+        <a href="{% url 'admin_sales' %}" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 {% if active_page == 'sales' %}bg-[#6D4AFF] text-white shadow-lg shadow-purple-600/30{% else %}hover:bg-slate-800/60 hover:text-slate-200{% endif %}">
+            <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+            <span>Sales & Packages</span>
+        </a>
+
+        <a href="{% url 'admin_reports' %}" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 {% if active_page == 'reports' %}bg-[#6D4AFF] text-white shadow-lg shadow-purple-600/30{% else %}hover:bg-slate-800/60 hover:text-slate-200{% endif %}">
+            <i data-lucide="bar-chart-3" class="w-4 h-4"></i>
+            <span>Reports</span>
+        </a>
+
+        <a href="{% url 'admin_kyc' %}" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 {% if active_page == 'kyc' %}bg-[#6D4AFF] text-white shadow-lg shadow-purple-600/30{% else %}hover:bg-slate-800/60 hover:text-slate-200{% endif %}">
+            <i data-lucide="shield-check" class="w-4 h-4"></i>
+            <span>KYC Verification</span>
+        </a>
+
+        <a href="{% url 'admin_tickets' %}" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 {% if active_page == 'tickets' %}bg-[#6D4AFF] text-white shadow-lg shadow-purple-600/30{% else %}hover:bg-slate-800/60 hover:text-slate-200{% endif %}">
+            <i data-lucide="message-square" class="w-4 h-4"></i>
+            <span>Support Tickets</span>
+        </a>
+
+        <a href="{% url 'admin_notifications' %}" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 {% if active_page == 'notifications' %}bg-[#6D4AFF] text-white shadow-lg shadow-purple-600/30{% else %}hover:bg-slate-800/60 hover:text-slate-200{% endif %}">
+            <i data-lucide="bell" class="w-4 h-4"></i>
+            <span>Notifications</span>
+        </a>
+
+        <a href="{% url 'admin_settings' %}" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 {% if active_page == 'settings' %}bg-[#6D4AFF] text-white shadow-lg shadow-purple-600/30{% else %}hover:bg-slate-800/60 hover:text-slate-200{% endif %}">
+            <i data-lucide="settings" class="w-4 h-4"></i>
+            <span>Settings</span>
+        </a>
+
+        <a href="{% url 'admin_admins' %}" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 {% if active_page == 'admins' %}bg-[#6D4AFF] text-white shadow-lg shadow-purple-600/30{% else %}hover:bg-slate-800/60 hover:text-slate-200{% endif %}">
+            <i data-lucide="user-cog" class="w-4 h-4"></i>
+            <span>Admins</span>
+        </a>
+
+        <a href="{% url 'admin_system_settings' %}" class="flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 {% if active_page == 'system_settings' %}bg-[#6D4AFF] text-white shadow-lg shadow-purple-600/30{% else %}hover:bg-slate-800/60 hover:text-slate-200{% endif %}">
+            <i data-lucide="sliders" class="w-4 h-4"></i>
+            <span>System Settings</span>
+        </a>
+    </div>
+
+    <!-- Sidebar Footer / Admin Super Admin Chip -->
+    <div class="p-4 border-t border-slate-800/80 shrink-0">
+        <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition cursor-pointer">
+            <div class="flex items-center space-x-3">
+                <div class="w-9 h-9 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-400 flex items-center justify-center font-bold text-sm">
+                    <i data-lucide="user" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <h4 class="text-xs font-semibold text-white leading-tight">Admin</h4>
+                    <p class="text-[11px] text-slate-400 font-medium">Super Admin</p>
+                </div>
+            </div>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400"></i>
+        </div>
+    </div>
+</aside>
