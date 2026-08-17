@@ -1,0 +1,20 @@
+{% extends "panel/layout/base.html" %}
+{% load static %}
+
+{% block title %}Sales & Packages{% endblock %}
+
+{% block content %}
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <div>
+        <h1 class="text-2xl font-bold text-slate-800">Sales & Package Orders</h1>
+        <p class="text-xs font-medium text-slate-500 mt-0.5">Track package purchase orders & product sales revenue</p>
+    </div>
+</div>
+
+<div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-xs space-y-4">
+    <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+        <h3 class="text-sm font-bold text-slate-800">Total Sales Volume: <span class="text-[#6D4AFF]">₹ 28,12,000</span></h3>
+    </div>
+    <p class="text-xs text-slate-500">Overview of all package purchases and automated order fulfillments.</p>
+</div>
+{% endblock %}

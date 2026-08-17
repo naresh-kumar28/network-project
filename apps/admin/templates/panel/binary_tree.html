@@ -1,0 +1,77 @@
+{% extends "panel/layout/base.html" %}
+{% load static %}
+
+{% block title %}Binary Tree{% endblock %}
+
+{% block content %}
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <div>
+        <h1 class="text-2xl font-bold text-slate-800">Binary Tree Visualizer</h1>
+        <p class="text-xs font-medium text-slate-500 mt-0.5">Explore left and right leg binary genealogy</p>
+    </div>
+    <div class="flex items-center space-x-3">
+        <input type="text" placeholder="Search Member ID / Username..." class="text-xs font-medium bg-white border border-slate-200 rounded-xl px-3.5 py-2 text-slate-700 focus:outline-none focus:border-[#6D4AFF]">
+        <button class="bg-[#6D4AFF] text-white text-xs font-semibold px-4 py-2 rounded-xl shadow-xs">Search Node</button>
+    </div>
+</div>
+
+<div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-xs space-y-6">
+    <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+        <div class="flex items-center space-x-6 text-xs">
+            <div class="flex items-center space-x-2">
+                <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                <span class="font-bold text-slate-700">Active (Paid)</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <span class="w-3 h-3 rounded-full bg-amber-500"></span>
+                <span class="font-bold text-slate-700">Free / Unpaid</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <span class="w-3 h-3 rounded-full bg-slate-300"></span>
+                <span class="font-bold text-slate-700">Vacant Spot</span>
+            </div>
+        </div>
+        <div class="text-xs text-slate-500 font-medium">Root Member: <span class="font-bold text-slate-800">M12458 (Rahul Kumar)</span></div>
+    </div>
+
+    <!-- Tree Mock Diagram -->
+    <div class="py-8 overflow-x-auto">
+        <div class="min-w-[700px] flex flex-col items-center space-y-8">
+            <!-- Root Level -->
+            <div class="flex flex-col items-center">
+                <div class="w-16 h-16 rounded-2xl bg-[#6D4AFF] text-white flex flex-col items-center justify-center shadow-lg shadow-purple-500/30 cursor-pointer">
+                    <i data-lucide="user" class="w-6 h-6"></i>
+                    <span class="text-[10px] font-bold mt-1">M12458</span>
+                </div>
+                <span class="text-xs font-bold text-slate-800 mt-2">Rahul Kumar (Root)</span>
+                <span class="text-[10px] text-slate-400">Left: 420 | Right: 380</span>
+            </div>
+
+            <div class="w-64 h-px bg-slate-300 relative">
+                <div class="absolute -top-4 left-0 w-px h-4 bg-slate-300"></div>
+                <div class="absolute -top-4 right-0 w-px h-4 bg-slate-300"></div>
+            </div>
+
+            <!-- Level 1 -->
+            <div class="grid grid-cols-2 gap-32">
+                <div class="flex flex-col items-center">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-500 text-white flex flex-col items-center justify-center shadow-md cursor-pointer">
+                        <i data-lucide="user" class="w-5 h-5"></i>
+                        <span class="text-[9px] font-bold mt-0.5">M12457</span>
+                    </div>
+                    <span class="text-xs font-bold text-slate-800 mt-1">Amit Singh</span>
+                    <span class="text-[10px] text-slate-400">Left Leg</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-500 text-white flex flex-col items-center justify-center shadow-md cursor-pointer">
+                        <i data-lucide="user" class="w-5 h-5"></i>
+                        <span class="text-[9px] font-bold mt-0.5">M12456</span>
+                    </div>
+                    <span class="text-xs font-bold text-slate-800 mt-1">Pooja Kumari</span>
+                    <span class="text-[10px] text-slate-400">Right Leg</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

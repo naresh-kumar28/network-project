@@ -1,0 +1,524 @@
+{% extends "panel/layout/base.html" %}
+{% load static %}
+
+{% block title %}Members{% endblock %}
+
+{% block content %}
+<!-- Top Header Banner -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <div>
+        <h1 class="text-2xl font-bold text-slate-800">Members</h1>
+        <p class="text-xs font-medium text-slate-500 mt-0.5">Manage all members of the system</p>
+    </div>
+
+    <!-- Top Right Actions -->
+    <div class="flex items-center space-x-3">
+        <button type="button" class="bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-semibold px-4 py-2.5 rounded-xl shadow-xs flex items-center space-x-2 transition">
+            <i data-lucide="upload" class="w-4 h-4 text-slate-500"></i>
+            <span>Export Members</span>
+        </button>
+        <button type="button" class="bg-[#6D4AFF] hover:bg-purple-700 text-white text-xs font-semibold px-4 py-2.5 rounded-xl shadow-md shadow-purple-500/20 flex items-center space-x-2 transition">
+            <i data-lucide="plus" class="w-4 h-4"></i>
+            <span>Add Member</span>
+        </button>
+    </div>
+</div>
+
+<!-- 5 Stat Cards Row -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+    <!-- Stat 1: Total Members -->
+    <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-xs hover:shadow-md transition">
+        <div class="flex items-center space-x-4">
+            <div class="w-12 h-12 rounded-full bg-purple-100/70 text-[#6D4AFF] flex items-center justify-center shrink-0">
+                <i data-lucide="user" class="w-6 h-6"></i>
+            </div>
+            <div>
+                <p class="text-xs font-semibold text-slate-400">Total Members</p>
+                <h3 class="text-2xl font-bold text-slate-900 mt-0.5">12,458</h3>
+            </div>
+        </div>
+        <div class="mt-3 flex items-center space-x-1 text-xs font-medium text-emerald-600">
+            <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
+            <span>12.5%</span>
+            <span class="text-slate-400 font-normal">from last 7 days</span>
+        </div>
+    </div>
+
+    <!-- Stat 2: Active Members -->
+    <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-xs hover:shadow-md transition">
+        <div class="flex items-center space-x-4">
+            <div class="w-12 h-12 rounded-full bg-emerald-100/70 text-emerald-600 flex items-center justify-center shrink-0">
+                <i data-lucide="user-check" class="w-6 h-6"></i>
+            </div>
+            <div>
+                <p class="text-xs font-semibold text-slate-400">Active Members</p>
+                <h3 class="text-2xl font-bold text-slate-900 mt-0.5">8,752</h3>
+            </div>
+        </div>
+        <div class="mt-3 flex items-center space-x-1 text-xs font-medium text-emerald-600">
+            <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
+            <span>13.6%</span>
+            <span class="text-slate-400 font-normal">from last 7 days</span>
+        </div>
+    </div>
+
+    <!-- Stat 3: Inactive Members -->
+    <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-xs hover:shadow-md transition">
+        <div class="flex items-center space-x-4">
+            <div class="w-12 h-12 rounded-full bg-amber-100/70 text-amber-600 flex items-center justify-center shrink-0">
+                <i data-lucide="user-plus" class="w-6 h-6"></i>
+            </div>
+            <div>
+                <p class="text-xs font-semibold text-slate-400">Inactive Members</p>
+                <h3 class="text-2xl font-bold text-slate-900 mt-0.5">3,706</h3>
+            </div>
+        </div>
+        <div class="mt-3 flex items-center space-x-1 text-xs font-medium text-emerald-600">
+            <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
+            <span>9.2%</span>
+            <span class="text-slate-400 font-normal">from last 7 days</span>
+        </div>
+    </div>
+
+    <!-- Stat 4: KYC Verified Members -->
+    <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-xs hover:shadow-md transition">
+        <div class="flex items-center space-x-4">
+            <div class="w-12 h-12 rounded-full bg-blue-100/70 text-blue-600 flex items-center justify-center shrink-0">
+                <i data-lucide="shield-check" class="w-6 h-6"></i>
+            </div>
+            <div>
+                <p class="text-xs font-semibold text-slate-400">KYC Verified Members</p>
+                <h3 class="text-2xl font-bold text-slate-900 mt-0.5">6,985</h3>
+            </div>
+        </div>
+        <div class="mt-3 flex items-center space-x-1 text-xs font-medium text-emerald-600">
+            <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
+            <span>15.8%</span>
+            <span class="text-slate-400 font-normal">from last 7 days</span>
+        </div>
+    </div>
+
+    <!-- Stat 5: New Members Today -->
+    <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-xs hover:shadow-md transition">
+        <div class="flex items-center space-x-4">
+            <div class="w-12 h-12 rounded-full bg-rose-100/70 text-rose-600 flex items-center justify-center shrink-0">
+                <i data-lucide="user-plus" class="w-6 h-6"></i>
+            </div>
+            <div>
+                <p class="text-xs font-semibold text-slate-400">New Members (Today)</p>
+                <h3 class="text-2xl font-bold text-slate-900 mt-0.5">236</h3>
+            </div>
+        </div>
+        <div class="mt-3 flex items-center space-x-1 text-xs font-medium text-emerald-600">
+            <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
+            <span>18.3%</span>
+            <span class="text-slate-400 font-normal">from yesterday</span>
+        </div>
+    </div>
+</div>
+
+<!-- Search & Filter Card -->
+<div class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-100 shadow-xs">
+    <div class="flex flex-col lg:flex-row items-center gap-3">
+        <!-- Search Input -->
+        <div class="relative flex-1 w-full">
+            <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+            <input type="text" placeholder="Search by name, mobile, or member ID..." class="w-full text-xs font-medium bg-slate-50 border border-slate-200/80 rounded-xl pl-9 pr-4 py-2.5 text-slate-700 focus:bg-white focus:outline-none focus:border-[#6D4AFF] focus:ring-1 focus:ring-[#6D4AFF] transition">
+        </div>
+
+        <!-- Filter Dropdowns Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full lg:w-auto">
+            <select class="text-xs font-medium bg-slate-50 border border-slate-200/80 rounded-xl px-3 py-2.5 text-slate-600 focus:bg-white focus:outline-none focus:border-[#6D4AFF] transition">
+                <option value="">Select Plan</option>
+                <option>Plan A (₹3000)</option>
+                <option>Plan B (₹2800)</option>
+            </select>
+
+            <select class="text-xs font-medium bg-slate-50 border border-slate-200/80 rounded-xl px-3 py-2.5 text-slate-600 focus:bg-white focus:outline-none focus:border-[#6D4AFF] transition">
+                <option value="">Select Status</option>
+                <option>Active</option>
+                <option>Inactive</option>
+            </select>
+
+            <select class="text-xs font-medium bg-slate-50 border border-slate-200/80 rounded-xl px-3 py-2.5 text-slate-600 focus:bg-white focus:outline-none focus:border-[#6D4AFF] transition">
+                <option value="">Select KYC Status</option>
+                <option>Verified</option>
+                <option>Pending</option>
+                <option>Rejected</option>
+            </select>
+
+            <select class="text-xs font-medium bg-slate-50 border border-slate-200/80 rounded-xl px-3 py-2.5 text-slate-600 focus:bg-white focus:outline-none focus:border-[#6D4AFF] transition">
+                <option value="">Select Date Range</option>
+                <option>Today</option>
+                <option>Last 7 Days</option>
+                <option>This Month</option>
+            </select>
+        </div>
+
+        <!-- Filter Action Buttons -->
+        <div class="flex items-center space-x-2 w-full lg:w-auto justify-end">
+            <button type="button" class="bg-purple-50 hover:bg-purple-100 text-[#6D4AFF] border border-purple-200/80 text-xs font-semibold px-4 py-2.5 rounded-xl flex items-center space-x-1.5 transition">
+                <i data-lucide="filter" class="w-3.5 h-3.5"></i>
+                <span>Filter</span>
+            </button>
+            <button type="button" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 text-xs font-semibold px-4 py-2.5 rounded-xl flex items-center space-x-1.5 transition">
+                <i data-lucide="rotate-ccw" class="w-3.5 h-3.5 text-slate-400"></i>
+                <span>Reset</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Data Table Card -->
+<div class="bg-white rounded-2xl border border-slate-100 shadow-xs overflow-hidden">
+    <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse min-w-[900px]">
+            <thead>
+                <tr class="bg-slate-50/50 text-[11px] font-bold text-slate-600 border-b border-slate-100 uppercase tracking-wider">
+                    <th class="py-3.5 px-4 w-12 text-center">#</th>
+                    <th class="py-3.5 px-4">Member ID</th>
+                    <th class="py-3.5 px-4">Name</th>
+                    <th class="py-3.5 px-4">Sponsor ID</th>
+                    <th class="py-3.5 px-4">Plan</th>
+                    <th class="py-3.5 px-4">Mobile</th>
+                    <th class="py-3.5 px-4">Status</th>
+                    <th class="py-3.5 px-4">KYC Status</th>
+                    <th class="py-3.5 px-4">Joining Date</th>
+                    <th class="py-3.5 px-4 text-center">Action</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 text-xs text-slate-700">
+                <!-- Row 1 -->
+                <tr class="hover:bg-slate-50/60 transition">
+                    <td class="py-3 px-4 text-center text-slate-400 font-medium">1</td>
+                    <td class="py-3 px-4 font-bold text-slate-800">M12458</td>
+                    <td class="py-3 px-4">
+                        <div class="flex items-center space-x-2.5">
+                            <span class="w-7 h-7 rounded-full bg-purple-100 text-[#6D4AFF] font-bold text-[11px] flex items-center justify-center shrink-0">RK</span>
+                            <span class="font-bold text-slate-800">Rahul Kumar</span>
+                        </div>
+                    </td>
+                    <td class="py-3 px-4 font-medium text-slate-600">M10001</td>
+                    <td class="py-3 px-4">
+                        <span class="inline-flex px-2.5 py-0.5 bg-emerald-50 text-emerald-600 font-bold text-[11px] rounded-full border border-emerald-100">Plan A (₹3000)</span>
+                    </td>
+                    <td class="py-3 px-4 font-medium text-slate-600">9876543210</td>
+                    <td class="py-3 px-4">
+                        <span class="inline-flex px-2.5 py-0.5 bg-emerald-50 text-emerald-600 font-semibold text-[11px] rounded-full">Active</span>
+                    </td>
+                    <td class="py-3 px-4">
+                        <span class="inline-flex px-2.5 py-0.5 bg-emerald-50 text-emerald-600 font-semibold text-[11px] rounded-full">Verified</span>
+                    </td>
+                    <td class="py-3 px-4 text-slate-500 font-medium">10 May 2024, 10:30 AM</td>
+                    <td class="py-3 px-4 text-center">
+                        <button class="bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 text-xs font-semibold px-2.5 py-1 rounded-lg transition inline-flex items-center space-x-1">
+                            <i data-lucide="eye" class="w-3.5 h-3.5 text-[#6D4AFF]"></i>
+                            <span>View</span>
+                            <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400"></i>
+                        </button>
+                    </td>
+                </tr>
+
+                <!-- Row 2 -->
+                <tr class="hover:bg-slate-50/60 transition">
+                    <td class="py-3 px-4 text-center text-slate-400 font-medium">2</td>
+                    <td class="py-3 px-4 font-bold text-slate-800">M12457</td>
+                    <td class="py-3 px-4">
+                        <div class="flex items-center space-x-2.5">
+                            <span class="w-7 h-7 rounded-full bg-blue-100 text-blue-600 font-bold text-[11px] flex items-center justify-center shrink-0">AS</span>
+                            <span class="font-bold text-slate-800">Amit Singh</span>
+                        </div>
+                    </td>
+                    <td class="py-3 px-4 font-medium text-slate-600">M12458</td>
+                    <td class="py-3 px-4">
+                        <span class="inline-flex px-2.5 py-0.5 bg-blue-50 text-blue-600 font-bold text-[11px] rounded-full border border-blue-100">Plan B (₹2800)</span>
+                    </td>
+                    <td class="py-3 px-4 font-medium text-slate-600">9876543211</td>
+                    <td class="py-3 px-4">
+                        <span class="inline-flex px-2.5 py-0.5 bg-emerald-50 text-emerald-600 font-semibold text-[11px] rounded-full">Active</span>
+                    </td>
+                    <td class="py-3 px-4">
+                        <span class="inline-flex px-2.5 py-0.5 bg-emerald-50 text-emerald-600 font-semibold text-[11px] rounded-full">Verified</span>
+                    </td>
+                    <td class="py-3 px-4 text-slate-500 font-medium">10 May 2024, 10:18 AM</td>
+                    <td class="py-3 px-4 text-center">
+                        <button class="bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 text-xs font-semibold px-2.5 py-1 rounded-lg transition inline-flex items-center space-x-1">
+                            <i data-lucide="eye" class="w-3.5 h-3.5 text-[#6D4AFF]"></i>
+                            <span>View</span>
+                            <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400"></i>
+                        </button>
+                    </td>
+                </tr>
+
+                <!-- Row 3 -->
+                <tr class="hover:bg-slate-50/60 transition">
+                    <td class="py-3 px-4 text-center text-slate-400 font-medium">3</td>
+                    <td class="py-3 px-4 font-bold text-slate-800">M12456</td>
+                    <td class="py-3 px-4">
+                        <div class="flex items-center space-x-2.5">
+                            <span class="w-7 h-7 rounded-full bg-purple-100 text-[#6D4AFF] font-bold text-[11px] flex items-center justify-center shrink-0">PK</span>
+                            <span class="font-bold text-slate-800">Pooja Kumari</span>
+                        </div>
+                    </td>
+                    <td class="py-3 px-4 font-medium text-slate-600">M12457</td>
+                    <td class="py-3 px-4">
+                        <span class="inline-flex px-2.5 py-0.5 bg-emerald-50 text-emerald-600 font-bold text-[11px] rounded-full border border-emerald-100">Plan A (₹3000)</span>
+                    </td>
+                    <td class="py-3 px-4 font-medium text-slate-600">9876543212</td>
+                    <td class="py-3 px-4">
+                        <span class="inline-flex px-2.5 py-0.5 bg-emerald-50 text-emerald-600 font-semibold text-[11px] rounded-full">Active</span>
+                    </td>
+                    <td class="py-3 px-4">
+                        <span class="inline-flex px-2.5 py-0.5 bg-emerald-50 text-emerald-600 font-semibold text-[11px] rounded-full">Verified</span>
+                    </td>
+                    <td class="py-3 px-4 text-slate-500 font-medium">10 May 2024, 09:52 AM</td>
+                    <td class="py-3 px-4 text-center">
+                        <button class="bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 text-xs font-semibold px-2.5 py-1 rounded-lg transition inline-flex items-center space-x-1">
+                            <i data-lucide="eye" class="w-3.5 h-3.5 text-[#6D4AFF]"></i>
+                            <span>View</span>
+                            <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400"></i>
+                        </button>
+                    </td>
+                </tr>
+
+                <!-- Row 4 -->
+                <tr class="hover:bg-slate-50/60 transition">
+                    <td class="py-3 px-4 text-center text-slate-400 font-medium">4</td>
+                    <td class="py-3 px-4 font-bold text-slate-800">M12455</td>
+                    <td class="py-3 px-4">
+                        <div class="flex items-center space-x-2.5">
+                            <span class="w-7 h-7 rounded-full bg-indigo-100 text-indigo-600 font-bold text-[11px] flex items-center justify-center shrink-0">VS</span>
+                            <span class="font-bold text-slate-800">Virat Sharma</span>
+                        </div>
+                    </td>
+                    <td class="py-3 px-4 font-medium text-slate-600">M12458</td>
+                    <td class="py-3 px-4">
+                        <span class="inline-flex px-2.5 py-0.5 bg-blue-50 text-blue-600 font-bold text-[11px] rounded-full border border-blue-100">Plan B (₹2800)</span>
+                    </td>
+                    <td class="py-3 px-4 font-medium text-slate-600">9876543213</td>
+                    <td class="py-3 px-4">
+                        <span class="inline-flex px-2.5 py-0.5 bg-emerald-50 text-emerald-600 font-semibold text-[11px] rounded-full">Active</span>
+                    </td>
+                    <td class="py-3 px-4">
+                        <span class="inline-flex px-2.5 py-0.5 bg-amber-50 text-amber-600 font-semibold text-[11px] rounded-full">Pending</span>
+                    </td>
+                    <td class="py-3 px-4 text-slate-500 font-medium">10 May 2024, 09:40 AM</td>
+                    <td class="py-3 px-4 text-center">
+                        <button class="bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 text-xs font-semibold px-2.5 py-1 rounded-lg transition inline-flex items-center space-x-1">
+                            <i data-lucide="eye" class="w-3.5 h-3.5 text-[#6D4AFF]"></i>
+                            <span>View</span>
+                            <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400"></i>
+                        </button>
+                    </td>
+                </tr>
+
+                <!-- Row 5 -->
+                <tr class="hover:bg-slate-50/60 transition">
+                    <td class="py-3 px-4 text-center text-slate-400 font-medium">5</td>
+                    <td class="py-3 px-4 font-bold text-slate-800">M12454</td>
+                    <td class="py-3 px-4">
+                        <div class="flex items-center space-x-2.5">
+                            <span class="w-7 h-7 rounded-full bg-purple-100 text-[#6D4AFF] font-bold text-[11px] flex items-center justify-center shrink-0">NS</span>
+                            <span class="font-bold text-slate-800">Neha Singh</span>
+                        </div>
+                    </td>
+                    <td class="py-3 px-4 font-medium text-slate-600">M12457</td>
+                    <td class="py-3 px-4">
+                        <span class="inline-flex px-2.5 py-0.5 bg-emerald-50 text-emerald-600 font-bold text-[11px] rounded-full border border-emerald-100">Plan A (₹3000)</span>
+                    </td>
+                    <td class="py-3 px-4 font-medium text-slate-600">9876543214</td>
+                    <td class="py-3 px-4">
+                        <span class="inline-flex px-2.5 py-0.5 bg-emerald-50 text-emerald-600 font-semibold text-[11px] rounded-full">Active</span>
+                    </td>
+                    <td class="py-3 px-4">
+                        <span class="inline-flex px-2.5 py-0.5 bg-emerald-50 text-emerald-600 font-semibold text-[11px] rounded-full">Verified</span>
+                    </td>
+                    <td class="py-3 px-4 text-slate-500 font-medium">10 May 2024, 09:28 AM</td>
+                    <td class="py-3 px-4 text-center">
+                        <button class="bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 text-xs font-semibold px-2.5 py-1 rounded-lg transition inline-flex items-center space-x-1">
+                            <i data-lucide="eye" class="w-3.5 h-3.5 text-[#6D4AFF]"></i>
+                            <span>View</span>
+                            <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400"></i>
+                        </button>
+                    </td>
+                </tr>
+
+                <!-- Row 6 -->
+                <tr class="hover:bg-slate-50/60 transition">
+                    <td class="py-3 px-4 text-center text-slate-400 font-medium">6</td>
+                    <td class="py-3 px-4 font-bold text-slate-800">M12453</td>
+                    <td class="py-3 px-4">
+                        <div class="flex items-center space-x-2.5">
+                            <span class="w-7 h-7 rounded-full bg-rose-100 text-rose-600 font-bold text-[11px] flex items-center justify-center shrink-0">RB</span>
+                            <span class="font-bold text-slate-800">Rohit Bansal</span>
+                        </div>
+                    </td>
+                    <td class="py-3 px-4 font-medium text-slate-600">M12456</td>
+                    <td class="py-3 px-4">
+                        <span class="inline-flex px-2.5 py-0.5 bg-emerald-50 text-emerald-600 font-bold text-[11px] rounded-full border border-emerald-100">Plan A (₹3000)</span>
+                    </td>
+                    <td class="py-3 px-4 font-medium text-slate-600">9876543215</td>
+                    <td class="py-3 px-4">
+                        <span class="inline-flex px-2.5 py-0.5 bg-rose-50 text-rose-600 font-semibold text-[11px] rounded-full">Inactive</span>
+                    </td>
+                    <td class="py-3 px-4">
+                        <span class="inline-flex px-2.5 py-0.5 bg-amber-50 text-amber-600 font-semibold text-[11px] rounded-full">Pending</span>
+                    </td>
+                    <td class="py-3 px-4 text-slate-500 font-medium">10 May 2024, 09:15 AM</td>
+                    <td class="py-3 px-4 text-center">
+                        <button class="bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 text-xs font-semibold px-2.5 py-1 rounded-lg transition inline-flex items-center space-x-1">
+                            <i data-lucide="eye" class="w-3.5 h-3.5 text-[#6D4AFF]"></i>
+                            <span>View</span>
+                            <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400"></i>
+                        </button>
+                    </td>
+                </tr>
+
+                <!-- Row 7 -->
+                <tr class="hover:bg-slate-50/60 transition">
+                    <td class="py-3 px-4 text-center text-slate-400 font-medium">7</td>
+                    <td class="py-3 px-4 font-bold text-slate-800">M12452</td>
+                    <td class="py-3 px-4">
+                        <div class="flex items-center space-x-2.5">
+                            <span class="w-7 h-7 rounded-full bg-emerald-100 text-emerald-600 font-bold text-[11px] flex items-center justify-center shrink-0">SK</span>
+                            <span class="font-bold text-slate-800">Sunita Kumari</span>
+                        </div>
+                    </td>
+                    <td class="py-3 px-4 font-medium text-slate-600">M12455</td>
+                    <td class="py-3 px-4">
+                        <span class="inline-flex px-2.5 py-0.5 bg-blue-50 text-blue-600 font-bold text-[11px] rounded-full border border-blue-100">Plan B (₹2800)</span>
+                    </td>
+                    <td class="py-3 px-4 font-medium text-slate-600">9876543216</td>
+                    <td class="py-3 px-4">
+                        <span class="inline-flex px-2.5 py-0.5 bg-emerald-50 text-emerald-600 font-semibold text-[11px] rounded-full">Active</span>
+                    </td>
+                    <td class="py-3 px-4">
+                        <span class="inline-flex px-2.5 py-0.5 bg-emerald-50 text-emerald-600 font-semibold text-[11px] rounded-full">Verified</span>
+                    </td>
+                    <td class="py-3 px-4 text-slate-500 font-medium">10 May 2024, 08:55 AM</td>
+                    <td class="py-3 px-4 text-center">
+                        <button class="bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 text-xs font-semibold px-2.5 py-1 rounded-lg transition inline-flex items-center space-x-1">
+                            <i data-lucide="eye" class="w-3.5 h-3.5 text-[#6D4AFF]"></i>
+                            <span>View</span>
+                            <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400"></i>
+                        </button>
+                    </td>
+                </tr>
+
+                <!-- Row 8 -->
+                <tr class="hover:bg-slate-50/60 transition">
+                    <td class="py-3 px-4 text-center text-slate-400 font-medium">8</td>
+                    <td class="py-3 px-4 font-bold text-slate-800">M12451</td>
+                    <td class="py-3 px-4">
+                        <div class="flex items-center space-x-2.5">
+                            <span class="w-7 h-7 rounded-full bg-[#6D4AFF]/10 text-[#6D4AFF] font-bold text-[11px] flex items-center justify-center shrink-0">MG</span>
+                            <span class="font-bold text-slate-800">Manish Gupta</span>
+                        </div>
+                    </td>
+                    <td class="py-3 px-4 font-medium text-slate-600">M12458</td>
+                    <td class="py-3 px-4">
+                        <span class="inline-flex px-2.5 py-0.5 bg-emerald-50 text-emerald-600 font-bold text-[11px] rounded-full border border-emerald-100">Plan A (₹3000)</span>
+                    </td>
+                    <td class="py-3 px-4 font-medium text-slate-600">9876543217</td>
+                    <td class="py-3 px-4">
+                        <span class="inline-flex px-2.5 py-0.5 bg-emerald-50 text-emerald-600 font-semibold text-[11px] rounded-full">Active</span>
+                    </td>
+                    <td class="py-3 px-4">
+                        <span class="inline-flex px-2.5 py-0.5 bg-emerald-50 text-emerald-600 font-semibold text-[11px] rounded-full">Verified</span>
+                    </td>
+                    <td class="py-3 px-4 text-slate-500 font-medium">10 May 2024, 08:30 AM</td>
+                    <td class="py-3 px-4 text-center">
+                        <button class="bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 text-xs font-semibold px-2.5 py-1 rounded-lg transition inline-flex items-center space-x-1">
+                            <i data-lucide="eye" class="w-3.5 h-3.5 text-[#6D4AFF]"></i>
+                            <span>View</span>
+                            <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400"></i>
+                        </button>
+                    </td>
+                </tr>
+
+                <!-- Row 9 -->
+                <tr class="hover:bg-slate-50/60 transition">
+                    <td class="py-3 px-4 text-center text-slate-400 font-medium">9</td>
+                    <td class="py-3 px-4 font-bold text-slate-800">M12450</td>
+                    <td class="py-3 px-4">
+                        <div class="flex items-center space-x-2.5">
+                            <span class="w-7 h-7 rounded-full bg-purple-100 text-[#6D4AFF] font-bold text-[11px] flex items-center justify-center shrink-0">AJ</span>
+                            <span class="font-bold text-slate-800">Anjali Jaiswal</span>
+                        </div>
+                    </td>
+                    <td class="py-3 px-4 font-medium text-slate-600">M12457</td>
+                    <td class="py-3 px-4">
+                        <span class="inline-flex px-2.5 py-0.5 bg-blue-50 text-blue-600 font-bold text-[11px] rounded-full border border-blue-100">Plan B (₹2800)</span>
+                    </td>
+                    <td class="py-3 px-4 font-medium text-slate-600">9876543218</td>
+                    <td class="py-3 px-4">
+                        <span class="inline-flex px-2.5 py-0.5 bg-rose-50 text-rose-600 font-semibold text-[11px] rounded-full">Inactive</span>
+                    </td>
+                    <td class="py-3 px-4">
+                        <span class="inline-flex px-2.5 py-0.5 bg-rose-50 text-rose-600 font-semibold text-[11px] rounded-full">Rejected</span>
+                    </td>
+                    <td class="py-3 px-4 text-slate-500 font-medium">10 May 2024, 07:45 AM</td>
+                    <td class="py-3 px-4 text-center">
+                        <button class="bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 text-xs font-semibold px-2.5 py-1 rounded-lg transition inline-flex items-center space-x-1">
+                            <i data-lucide="eye" class="w-3.5 h-3.5 text-[#6D4AFF]"></i>
+                            <span>View</span>
+                            <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400"></i>
+                        </button>
+                    </td>
+                </tr>
+
+                <!-- Row 10 -->
+                <tr class="hover:bg-slate-50/60 transition">
+                    <td class="py-3 px-4 text-center text-slate-400 font-medium">10</td>
+                    <td class="py-3 px-4 font-bold text-slate-800">M12449</td>
+                    <td class="py-3 px-4">
+                        <div class="flex items-center space-x-2.5">
+                            <span class="w-7 h-7 rounded-full bg-cyan-100 text-cyan-600 font-bold text-[11px] flex items-center justify-center shrink-0">DK</span>
+                            <span class="font-bold text-slate-800">Deepak Kumar</span>
+                        </div>
+                    </td>
+                    <td class="py-3 px-4 font-medium text-slate-600">M12456</td>
+                    <td class="py-3 px-4">
+                        <span class="inline-flex px-2.5 py-0.5 bg-emerald-50 text-emerald-600 font-bold text-[11px] rounded-full border border-emerald-100">Plan A (₹3000)</span>
+                    </td>
+                    <td class="py-3 px-4 font-medium text-slate-600">9876543219</td>
+                    <td class="py-3 px-4">
+                        <span class="inline-flex px-2.5 py-0.5 bg-emerald-50 text-emerald-600 font-semibold text-[11px] rounded-full">Active</span>
+                    </td>
+                    <td class="py-3 px-4">
+                        <span class="inline-flex px-2.5 py-0.5 bg-emerald-50 text-emerald-600 font-semibold text-[11px] rounded-full">Verified</span>
+                    </td>
+                    <td class="py-3 px-4 text-slate-500 font-medium">10 May 2024, 07:20 AM</td>
+                    <td class="py-3 px-4 text-center">
+                        <button class="bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 text-xs font-semibold px-2.5 py-1 rounded-lg transition inline-flex items-center space-x-1">
+                            <i data-lucide="eye" class="w-3.5 h-3.5 text-[#6D4AFF]"></i>
+                            <span>View</span>
+                            <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Pagination Footer -->
+    <div class="px-6 py-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs font-medium text-slate-500">Showing <span class="font-bold text-slate-700">1</span> to <span class="font-bold text-slate-700">10</span> of <span class="font-bold text-slate-700">12,458</span> members</p>
+        
+        <div class="flex items-center space-x-1.5 text-xs font-semibold text-slate-600">
+            <button class="w-8 h-8 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 flex items-center justify-center text-slate-400 transition">&laquo;</button>
+            <button class="w-8 h-8 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 flex items-center justify-center text-slate-400 transition">&lt;</button>
+            <button class="w-8 h-8 rounded-lg bg-[#6D4AFF] text-white font-bold flex items-center justify-center shadow-xs">1</button>
+            <button class="w-8 h-8 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 flex items-center justify-center hover:text-[#6D4AFF] transition">2</button>
+            <button class="w-8 h-8 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 flex items-center justify-center hover:text-[#6D4AFF] transition">3</button>
+            <span class="px-1 text-slate-400">...</span>
+            <button class="w-8 h-8 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 flex items-center justify-center hover:text-[#6D4AFF] transition">1246</button>
+            <button class="w-8 h-8 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 flex items-center justify-center text-slate-600 transition">&gt;</button>
+            <button class="w-8 h-8 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 flex items-center justify-center text-slate-600 transition">&raquo;</button>
+        </div>
+    </div>
+</div>
+
+<!-- EPIN Modal Included -->
+{% include "panel/includes/_generate_epin_modal.html" %}
+{% endblock %}
