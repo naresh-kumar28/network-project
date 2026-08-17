@@ -1,0 +1,15 @@
+* [33me2bbbf7[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mprabhakar[m[33m, [m[1;31morigin/prabhakar[m[33m)[m feat: implement core views, routing, and membership plan templates
+* [33m9d56092[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m chore: add requirements.txt with initial dependencies for the project
+* [33m16778ff[m refactor: clean up URL configuration and add comprehensive .gitignore
+* [33m750d384[m Add initial project setup with Tailwind CSS and base HTML structure
+* [33me9a6116[m reset all work
+*   [33m2c1aafe[m Merge pull request #1 from naresh-kumar28/feature/accounts
+[32m|[m[33m\[m  
+[32m|[m * [33me48c8e7[m feat: implement user authentication and management system with registration, login, password reset, and profile management
+[32m|[m[32m/[m  
+* [33md35df48[m docs folder ko gitignore se remove kar diye
+* [33m796ac33[m feat: initialize Django backend project structure with core configurations and README documentation
+* [33m785761c[m feat: initialize Add Swager in API configuration
+* [33m79ec8ca[m Ignore docs folder
+* [33m0f4abae[m Add .gitignore entries for project documentation
+* [33m4cf2080[m Django + DRF project initialized. SimpleJWT configured. Backend apps structure created.
